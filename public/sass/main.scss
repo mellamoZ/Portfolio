@@ -1,0 +1,1082 @@
+/*
+***************************************************** /
+
+* Theme Name: Portfeed
+
+* Theme URI: 
+
+* Author: 
+
+* Author URI: 
+
+* Description:  .
+
+* Version: 1.0.0
+
+* Tags: html5, sass, jquery, bootstrap, theme, template, modern, responsive, resume
+
+*****************************************************/
+
+/*
+|------------------------------------------------------
+| CSS INDEX
+|------------------------------------------------------
+
+1. GLOBAL STYLESHEET
+
+2. NAVBAR SECTION
+
+3. HEADER SECTION
+
+4. MY INTRO SECTION
+
+5. SERVICES SECTION
+
+6. PORTFOLIO SECTION
+
+7. TESTIM SECTION
+
+8. BLOG SECTION
+
+9. FOOTER
+
+
+/*==========================================================
+
+                    1. START GLOBAL STYLESHEET
+
+===========================================================*/
+
+
+/*
+	Import
+	------------------------------------------------
+*/
+
+@import 'variables';
+@import 'mixins';
+
+* {
+    @include box-sizing;
+}
+
+a:hover,
+a:focus,
+a {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;;
+    -moz-font-smoothing: antialiased;;
+    -ms-font-smoothing: antialiased;;
+    -o-font-smoothing: antialiased;;
+    font-smoothing: antialiased;
+}
+
+.Open-Sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.main-btn {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 30px;
+    background-color: $bg-main-color;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    @include animate( all, 320ms, ease-in );
+    border: 2px solid $main-color;
+    font-weight: 600;
+    margin-right: 23px;
+    &:focus,
+    &:hover {
+        color: #071e48;
+        background-color: transparent;
+        border: 2px solid $main-color;
+    }
+}
+.main-btn-hm {
+    display: inline-block;
+    color: #071e48;
+    background-color: transparent;
+    border: 2px solid $main-color;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    @include animate( all, 320ms, ease-in );
+    font-weight: 600;
+    &:focus,
+    &:hover {
+        color: #fff;
+        background-color: $bg-main-color;
+        border: 2px solid $main-color;
+    }
+}
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+    span {
+        color: $main-color;
+        font-size: 17px;
+    }
+    h2 {
+        font-weight: 700;
+        color: $text-color;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+}
+p {
+    color: $parag-color;
+    font-size: 15px;
+}
+
+
+/*==========================================================
+
+                   START SOCIAL MEDIA STYLESHEET
+
+===========================================================*/
+
+.social-media {
+    position: fixed;
+    top: 30%;
+    left: 15px;
+    z-index: 99;
+    padding: 8px 6px;
+    @include animate( all, 320ms, cubic-bezier(0.13,-0.24, 0.35, 1.36) );
+    a {
+        color: #071e48;
+        display: block;
+        padding: 10px 8px;
+        transform: translateX(0);
+        @include animate( all, 320ms, ease-in-out );
+        &:hover {
+            transform: translateX(20%);
+            color: $main-color;
+        }
+    }
+    
+    &.open-social {
+        right: 0;
+    }
+}
+
+
+/*==========================================================
+
+                    2. START NAVBAR STYLESHEET
+
+===========================================================*/
+
+.navbar {
+    box-shadow: 0 0 15px rgba(214, 214, 214, 0.15);
+    background-color: #fff;
+    height: 90px;
+    .nav-item {
+        margin: 0 20px;
+        position: relative;
+        &.active-nav {
+            a {
+                color: $main-color;
+            }
+        }
+        a {
+            font-size: 14px;
+            color: $text-color;
+            font-weight: 600;
+        }
+    }
+    .btn-nav {
+        background-color: $bg-main-color;
+        padding: 8px 35px;
+        border-radius: 50px;
+        margin-left: 25px;
+        a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+    a {
+        H2 {
+            font-weight: bolder;
+            border:1px solid #071e48;
+            padding: 0PX 3px;
+            color: #071e48;
+            font-size: 35PX;  
+          }
+    }
+}
+
+.navbar-toggler {
+    width: 50px;
+    height: 45px;
+    display: inline-block;
+    position: fixed;
+    top: 7px;
+    right: 20px;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+    .menu {
+        width: 30px;
+        height: 21px;
+        position: relative;
+        top: 0;
+        left: 0;
+        .line1,
+        .line2,
+        .line3 {
+            position: absolute;
+            background-color: #333;
+            width: 100%;
+            height: 2px;
+            left: -2px;
+            border-radius: 15px;
+            @include animate( all, 320ms, cubic-bezier(0.42, 0, 0.38, 1.54) );
+        }
+        .line1 {
+            top: 2px;
+        }
+        .line2 {
+            top: 10px;
+        }
+        .line3 {
+            top: 18px;
+        }
+    }
+}
+
+.navbar-toggler .menu.toggle {
+    .line1,
+    .line2,
+    .line3 {
+        top: 10px;
+    }
+    .line1 {
+        @include transform ( rotate(45deg) );
+    }
+    .line2 ,
+    .line3 {
+        @include transform ( rotate(-45deg) );
+    }   
+
+}
+
+
+/*==========================================================
+
+                    3. START HEADER STYLESHEET
+
+===========================================================*/
+
+.home {
+    .bg-image {
+        background-image: url(../images/background.png); /* Here You can edit image Home 1  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .title {
+        position: absolute;
+        top: 50%;
+        margin-top: -100px;
+        text-align: left;
+        margin-bottom: 0;
+        span {
+            font-size: 23px;
+            color: $main-color;
+        }
+        h1 {
+            font-size: 52px;
+            color: $text-color;
+            font-weight: 900;
+            
+        }
+        .typed-cursor,
+        .type {
+            display: inline;
+            font-size: 21px;
+            color: $text-color;
+            font-weight: 600;
+        }
+        p {
+            margin: 25px 0 35px;
+            font-size: 15px;
+            color: $parag-color;
+            max-width: 57%;
+        }
+    }
+    
+}
+
+.popup {
+    .popup-cont {
+        height: 140px;
+        max-width: 90%;
+        margin: auto;
+        padding: 45px  20px;
+        border-radius: 80px;
+        box-shadow: -1px 13px 15px rgba(208, 208, 208, 0.36);
+        margin-top: -70px;
+        background-color: #fff;
+        .vl {
+            border-right: 1px solid #999;
+        }
+        .img-popup {
+            background-color: $main-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: auto;
+            text-align: center;
+            line-height: 50px;
+            img {
+                width: 26px;
+            }
+        }
+        h6 {
+            font-size: 15px;
+            font-weight: 800;
+            color: $text-color;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        span {
+            font-size: 13px;
+            font-weight: 500;
+            color: $main-color;
+        }
+    }
+}
+
+/*==========================================================
+
+                    4. START ABOUT STYLESHEET
+
+===========================================================*/
+
+.about {
+    position: relative;
+    .title {
+        text-align: left;
+        margin-bottom: 0;
+    }
+    .about-img {
+        background-image: url(../images/about-me.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 85%;
+        height: 100%;
+        position: relative;
+        &:after {
+            display: block;
+            content: "";
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: -8px;
+            right: -7px;
+            border-bottom: 2px solid $main-color;
+            border-right: 2px solid $main-color;
+        }
+        &:before {
+            display: block;
+            content: "";
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: -8px;
+            left: 155px;
+            border-top: 2px solid $main-color;
+            border-left: 2px solid $main-color;
+        }
+    }
+    .infos {
+        p {
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+    }
+    .interests {
+        h5 {
+            font-weight: 700;
+            color: $text-color;
+            margin-bottom: 15px;
+        }
+        .infos {
+            display: inline-block;
+            margin-right: 25px;
+            svg {
+                color: $main-color;
+            }
+            span {
+                font-size: 15px;
+                font-weight: 500;
+                padding: 5px;
+                color: $text-color;
+            }
+        }
+    }
+    .profile-info {
+        margin-bottom: 40px;
+        .content {
+            margin-bottom: 13px;
+            font-size: 15px;
+        }
+        svg {
+            color: $main-color;
+        }
+        .title-info {
+            font-weight: 600;
+            padding-left: 10px;
+        }
+        .element {
+            padding: 0 70px;
+        }
+    }
+    .about-cont {
+        .bg-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+            
+            &:before {
+                content: "";
+                display: block;
+                background-image: url(../images/about-me-bg-1.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 550px;
+                height: 550px;
+                position: fixed;
+                top: 10px;
+                left: -310px;
+                z-index: -2;
+                opacity: 0.5;
+            }
+            &:after {
+                content: "";
+                display: block;
+                background-image: url(../images/about-me-bg-2.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 350px;
+                height: 350px;
+                position: fixed;
+                bottom: -70px;
+                right: -170px;
+                z-index: -2;
+                opacity: 0.5;
+            }
+        }
+            
+    }
+}
+
+.skills {
+    background-color: #f1f4fb;
+    .skills-info {
+        width: 85%;
+        margin: auto;
+        .progress-text {
+            color: $text-color;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .progress {
+            background-color: #cdcdcd;
+            border-radius: 0;
+            overflow: visible;
+            position: relative;
+            height: 10px;
+            margin-bottom: 28px;
+            span {
+                position: absolute;
+                top: -30px;
+                right: 0;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .progress-bar {
+                float: left;
+                width: 0;
+                height: 100%;
+                line-height: 20px;
+                text-align: center;
+                position: relative;
+                @include animate (all, 1.5s, ease-in-out);
+                opacity: 0;
+                background-color: $bg-main-color;
+                &:before {
+                    content: attr(data-present);
+                    position: absolute;
+                    right: 0;
+                    top: -24px;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+.journey {
+    .journey-title {
+        margin-bottom: 30px;
+        svg {
+            font-size: 30px;
+            color: $text-color;
+        }
+        h4 {
+            display: inline-block;
+            padding: 0 10px;
+            font-weight: 700;
+            color: $text-color;
+        }
+    }
+    .journey-info {
+        position: relative;
+        &:hover {
+            .journey-marker {
+                &:before {
+                    border: 2px solid $main-color;
+                    box-shadow: inset 0 0 0px 10px #fff;
+                }
+            }   
+        }
+        .journey-marker {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 14px;
+            &:before {
+                background-color: $bg-main-color;
+                border: 3px solid transparent;
+                border-radius: 100%;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                position: absolute;
+                top: 4px;
+                left: 0;
+                @include animate (all, 700ms, ease-in-out);
+                box-shadow: inset 0 0 0px 0px #fff;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                top: 18px;
+                bottom: 0;
+                left: 6px;
+                display: block;
+                width: 2px;
+                background-color: $bg-main-color;
+            }
+        }
+        
+    }
+    .journey-infos {
+        margin-bottom: 30px;
+        padding-left: 40px;
+        h5 {
+            font-size: 17px;
+            font-weight: 600;
+            color: $text-color;
+            margin-bottom: 3px;
+        }
+        .info {
+            color: #304e84;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .date {
+            color: $main-color;
+            font-size: 12px;
+        }
+    }
+}
+
+/*==========================================================
+
+                    5. START SERVICES STYLESHEET
+
+===========================================================*/
+
+.serv {
+    .title {
+        margin-bottom: 120px;
+    }
+    .info-serv {
+        background-color: #fff;
+        border: 1px solid #cdcdcd;
+        padding: 25px 35px;
+        margin-bottom: 80px;
+        border-radius: 0 50px 0 0;
+        padding-top: 60px;
+        position: relative;
+        @include animate (all, 500ms, ease-in-out);
+        width: 95%;
+        &:hover {
+            background-color: $bg-main-color;
+            border: 1px solid #fff;
+            cursor: pointer;
+            h5,p {
+                color: #fff;
+            }
+            .icon-serv {
+                background-color: #fff;
+                color: $main-color;
+            }
+        }
+        h5 {
+            color: $text-color;
+            font-size: 19px;
+            font-weight: 700;
+            padding-bottom: 7px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .icon-serv {
+            position: absolute;
+            top: -40px;
+            left: 50px;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            background-color: $main-color;
+            line-height: 70px;
+            border-radius: 8px;
+            font-size: 28px;
+            color: #fff;
+            box-shadow: -2px -4px 15px rgba(214, 214, 214, 0.28);
+        }
+    }
+}
+
+
+/*==========================================================
+
+                    6. START PORTFOLIO STYLESHEET
+
+===========================================================*/
+
+.portfolio {
+    background-color: #f1f4fb;
+    .shuffle {
+        margin-bottom: 40px;
+        ul {
+            li {
+                display: inline-block;
+                cursor: pointer;
+                padding: 0 22px;
+                font-size: 15px;
+                font-weight: 600;
+                &.active {
+                    color: $main-color;
+                    @include animate( all, 320ms, ease-in-out );
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+        
+    }
+    .main-btn {
+        margin-top: 30px;
+    }
+    .gallery {
+        .item {
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+            @include animate( all, 320ms, ease-in-out );
+            border-radius: 9px;
+            .over {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #FFF;
+                background-color: #43a7ffcc;
+                opacity: 0;
+                z-index: 1;
+                @include animate( all, 320ms, ease-in-out );
+                .info-img {
+                    display: table;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    .center-infos {
+                        font-weight: 600;
+                        font-size: 18px;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+                a {
+                    font-size: 15px;
+                    color: $text-color;
+                    background-color: #fff;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    display: inline-block;
+                    border-radius: 4px;
+                    margin: 0 2px 10px;
+                }
+            }
+            img {
+                @include animate( all, 600ms, ease-in-out );
+                @include transform( scale(1) );
+            }
+            &:hover {
+                img {
+                    width: 100%;
+                    @include transform( scale(1.2) );
+                }
+                .over {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.show-less {
+    display: none;
+}
+
+.less {
+    display: none;
+}
+
+
+
+/*==========================================================
+
+                    6. START CALL TO ACTION STYLESHEET
+
+===========================================================*/
+
+.action {
+    background-color: $bg-main-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+    color: #fff;
+    padding-top: 30px 60px;
+    p {
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 35px;
+        margin-top: 35px;
+     
+    }
+
+    .main-btn {
+        background-color: #fff;
+        color: $main-color;
+    }
+}
+
+
+
+
+/*==========================================================
+
+                    8. START TESTIM STYLESHEET
+
+===========================================================*/
+
+.testim {
+  
+    .testim-infos {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            list-style-type: none;
+            margin-top: 60px;
+            li {
+                margin: 0 6px;
+            }
+
+            button {
+                display: block;
+                width: 12px;
+                height: 12px;
+                padding: 0;
+                border: none;
+                border-radius: 100%;
+                background-color: #cfcfcf;
+                text-indent: -9999px;
+            }
+
+            li.slick-active button {
+                background-color: $bg-main-color;
+            }
+
+        }
+        .myslide {
+            .client-testim {
+                display: inline-block;
+                padding-top: 15px;
+                float: left;
+            }
+            .image-testim {
+                display: inline-block;
+                float: right;
+                img {
+                    margin: auto;
+                    width: 100%;
+                    display: inline-block;
+                    max-width: 80px;
+                    height: 80px;
+                    border: 2px solid $main-color;
+                    border-radius: 50%;
+                    margin: auto;
+                    margin-bottom: 10px;
+                }
+            }
+            p {
+                font-size: 14px;
+                padding: 0px 40px;
+                text-align: left;
+                margin-top: 10px;
+            }
+            .name {
+                font-weight: 600;
+                font-size: 18px;
+                color: $text-color;
+            }
+            .info{
+                color: #666;
+                margin-bottom: 20px;
+                display: block;
+                font-size: 14px;
+                text-align: left;
+                font-style: italic;
+            }
+            .rate {padding-top: 15px;
+                svg {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+
+/*==========================================================
+
+                    9. START BLOG STYLESHEET
+
+===========================================================*/
+
+
+.blog {
+    background-color: #eef1fa;
+    .post {
+        box-shadow: 0 0 15px rgba(214, 214, 214, 0.25);
+        position: relative;
+        background-color: #fff;
+        width: 96%;
+        height: auto;
+        border: 1px solid #eee;
+        margin: auto;
+        a {
+            color: #fff;
+        }
+        .img-post {
+            width: 100%;
+            height: 290px;
+            overflow: hidden;
+            img {
+                @include animate (all, 700ms, ease-in-out);
+                @include transform ( scale(1) rotate(0) );
+                &:hover {
+                    @include transform ( scale(1.05) rotate(2deg) );
+                }
+            }
+        }
+        .infos-post {
+            padding: 15px;
+            h4 {
+                font-size: 18px;
+                margin-top: 8px;
+                font-weight: 600;
+                color: $text-color;
+            }
+            span {
+                color: #666;
+                font-size: 13px;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+
+
+/*==========================================================
+
+                    9. SERVICES CONTACT STYLESHEET
+
+===========================================================*/
+
+.contact {
+        background-image: url(../images/bg_contact.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    .form {
+        padding: 0 30px;
+        .thanks {
+            font-size: 32px;
+            margin-top: 70px;
+            margin-left: 30px;
+            span {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 35px;
+            }
+        }
+        .mgs-sent {
+            margin-bottom: 95px;
+            font-size: 19px;
+            margin-left: 30px;
+            letter-spacing: 1px;
+            color: #333;
+        }
+        .form-group {
+            textarea,
+            input {
+                border-radius: 0;
+                width: 100%;
+                text-align: left;
+                font-size: 14px;
+                margin-bottom: 22px;
+                border: 1px solid #b4b4b4;
+                padding: 12px 24px;
+                &::placeholder {
+                    color: #999;
+                }
+            }
+            textarea {
+                height: 120px;
+                resize: none;
+            }
+        }
+    }
+    .infos-contact {
+        @include animate( all, 900ms, ease-in-out );
+        .icon-contact {
+            width: 50px;
+            height: 50px;
+            background-color: $main-color;
+            color: #fff;
+            border-radius: 50%;
+            margin-left: auto;
+            svg {
+                font-size: 20px;
+                margin: auto;
+                display: table-cell;
+                @include transform( translate(0, 70%) );
+            }
+        }
+        h6 {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        a {
+            display: block;
+            font-size: 15px;
+            color: #666;
+        }
+        .infos {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/*==========================================================
+
+                    10. START FOOTER STYLESHEET
+
+===========================================================*/
+
+footer {
+    background-color: #100f2e;
+    text-align: center;
+    a {
+        H2 {
+            font-weight: bolder;
+            border:1px solid white;
+            padding: 0PX 3px;
+            color: white;
+            font-size: 35PX; 
+            width: 50PX; 
+            display: inline-block;   
+            margin-bottom: 25PX;
+        }
+    }
+    .footer-content {
+        padding: 70px 0 20px;
+        p {
+            font-size: 12px;
+            color: #fff;
+            max-width: 30%;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+        .social-media-footer {
+            a {
+                color: #fff;
+                background-color: $bg-main-color;
+                border-radius: 7px;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                display: inline-block;
+                margin-right: 13px;
+                font-size: 13px;
+                margin-bottom: 40px;
+                @include animate (all, 400ms, ease-in-out);
+                &:hover {
+                    color: $main-color;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

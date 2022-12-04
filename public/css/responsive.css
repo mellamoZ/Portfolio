@@ -1,0 +1,197 @@
+/* ------------------------- Start Media Query -------------------------------------- */
+
+/* X Small Screen */
+@media(min-width: 100px) and (max-width: 991px) {
+    .container {
+        padding: 0 40px;
+    }
+
+ #testim .container {
+        padding: 0 20px;
+    }
+    footer .footer-content p {
+        max-width: 80%;
+    }
+    .blog .post {
+        margin-bottom: 30px;
+    }
+    .action {
+        height: 340px;
+    }
+    .action p {
+        max-width: 90%;
+    }
+    .portfolio .shuffle ul li {
+        padding: 0 7px;
+        font-size: 13px;
+    }
+    .journey .journey-info {
+        width: 90%;
+        margin: auto;
+    }
+    .journey .journey-title {
+        margin-top: 30px;
+    }
+    .skills .skills-info .progress {
+        margin-bottom: 38px;
+    }
+    .testim .testim-infos .myslide .image-testim {
+        line-height: 100px;
+    }
+    .testim .testim-infos .myslide .image-testim img {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .testim .testim-infos .myslide p {
+        padding: 0px 0px;
+    }
+    .about .interests .infos {
+        padding-bottom: 15px;
+    }
+    .about .interests .infos span {
+        padding: 2px;
+    }
+    .about .profile-info .element {
+        padding: 0 10px;
+    }
+    .about .about-img {
+        height: 370px;
+        width: 300px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .about .about-img:before {
+        left: 15px;
+    }
+    .about .about-img:after {
+        right: -7px;
+    }
+    .popup .popup-cont .vl {
+        border: none;
+    }
+    .popup .popup-cont .img-popup {
+        margin-bottom: 40px;
+    }
+    .popup .popup-cont {
+        height: 330px;
+    }
+    .popup .popup-cont {
+        margin-top: 90px;
+    }
+    .home .main-btn,
+    .main-btn-hm {
+        font-size: 13px;
+        display: table;
+        margin-top: 15px;
+        padding: 11px 26px;
+        width: 150px;
+        text-align: center;
+    }
+    .home .title {
+        margin-top: -140px;
+    }
+    .home .title p {
+        font-size: 14px;
+    }
+    .home .title h1 {
+        font-size: 47px;
+    }
+    .home .title .typed-cursor, .home .title .type {
+        font-size: 17px;
+    }
+    .home .bg-image {
+        background-position: 60%;
+    }
+    
+    .contact .infos-contact {
+        margin-top: 40px;
+    }
+    .contact .form {
+        padding: 0 0;
+    }
+    /* Start Navbar */
+    
+    .navbar-toggler {
+        position: absolute;
+        height: 65px;
+    }
+    .navbar-toggler:focus {
+        border: none;
+        box-shadow: none;
+    }
+    .navbar a .bg_logo {
+        height: 80px;
+        position: absolute;
+        top: 0px;
+    }
+    .navbar-toggler .menu {
+        display: block;
+    }
+    .navbar a .bg_logo {
+        background-size: 55px;
+        width: 55px;
+    }
+    
+    .navbar {
+        height: 80px;
+    }
+    .navbar .navbar-nav {
+        border-top: 1px solid #eee;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: auto;
+        background-color: #fff;
+        height: 370px;
+    }
+    
+    .navbar .nav-item {
+        margin: 15px auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar .nav-item a {
+        font-size: 16px;
+    }
+    
+    .navbar .nav-item:first-of-type {
+        padding-top: 20px;
+    }
+    .navbar .btn-nav {
+        padding: 20px 0;
+        width: 40%;
+        margin: auto;
+        line-height: 1px;
+        text-align: center;
+    }
+}
+
+/* Small Screen */
+@media(min-width: 767px) and (max-width: 991px) {
+    
+    
+}
+
+/* Medium Screen */
+@media(min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 870px;
+    }
+    .about .about-img:before {
+        left: -9px;
+    }
+    .about .about-img:after {
+        bottom: -6px;
+    }
+
+}
+
+/* Larg Screen */
+@media(min-width: 1200px) {
+    
+}
+/* ------------------------- End Media Query ---------------------------------------- */	
